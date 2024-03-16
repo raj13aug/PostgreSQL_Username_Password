@@ -9,3 +9,9 @@ resource "google_sql_user" "root" {
   instance = google_sql_database_instance.primary.name
   password = random_string.root_password.result
 }
+
+
+resource "google_sql_database" "db" {
+  name     = "root"
+  instance = google_sql_database_instance.primary.name
+}
