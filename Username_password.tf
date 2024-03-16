@@ -4,7 +4,7 @@ resource "random_string" "root_password" {
   override_special = "%*()-_=+[]{}?"
 }
 
-resource "google_sql_user" "root" {
+resource "google_sql_user" "user" {
   name     = "root"
   instance = google_sql_database_instance.primary.name
   password = random_string.root_password.result
